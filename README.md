@@ -15,7 +15,7 @@ Criar uma API de jogo de Bingo usando as seguintes tecnologias:
  * Gerar as cartelas de uma rodada com os números aleatórios, regras:
    * Todas as cartelas geradas devem ter quantidades iguais de números;
    * A cartela deve ter 20 números;
-   * Uma cartela pode ter no máximo 1/4 dos mesmos números de uma cartela;
+   * Uma cartela pode ter no máximo 1/4 dos mesmos números de uma outra cartela;
    * as cartelas da rodada só podem ser geradas antes de começar o sorteio dos números;
  * Possibilidade de vincular uma cartela ao jogador ( 1 jogador só pode ser vinculado á uma cartela por rodada);
  * Guardar um histórico das rodadas com os números sorteados, regras:
