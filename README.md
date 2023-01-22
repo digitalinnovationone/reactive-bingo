@@ -34,7 +34,7 @@ Criar uma API de jogo de Bingo usando as seguintes tecnologias:
 ## Requisitos de testes
  * Os testes devem contemplar controller, services e repositórios que não são interfaces
 
- ## Dicas
+## Dicas
  Sugestão de endpoints:
  * Jogadores:
    * save (POST /players)
@@ -49,3 +49,16 @@ Criar uma API de jogo de Bingo usando as seguintes tecnologias:
    * gerar cartela (POST /rounds/{id}/bingo-card/{playerId})
    * buscar rodadas (GET /rounds)
    * buscar rodada pelo id (GET /rounds/{id})
+
+## Instruções
+   
+   * Na raiz do projeto executar:
+      > make compose-up
+   
+   * Acessar a api em:
+      > localhost:4080/api/doc.html
+   
+   * Acessar o mailcatcher em:
+     > localhost:4081
+   
+   Mais detalhes em Makefile, Dockerfile e docker-compose.yml

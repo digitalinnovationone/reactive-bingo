@@ -1,0 +1,32 @@
+server:
+  port: 80
+
+spring:
+  webflux:
+    base-path: /api
+  data:
+    mongodb:
+      host: ${MONGO_HOST}
+      port: ${MONGO_PORT}
+      username: ${MONGO_USERNAME}
+      password: ${MONGO_PASSWORD}
+      database: ${MONGO_DATABASE}
+  mail:
+    host: ${MAIL_HOST}
+    properties:
+      mail:
+        transport:
+          protocol: ${MAIL_PROTOCOL}
+        smtp:
+          port: ${MAIL_PORT}
+
+springdoc:
+  swagger-ui:
+    path: "/doc.html"
+
+config:
+  email:
+    from: "noreply@bingo.com"
+    subject: "Bingo"
+    winner-text: "You win!"
+    loser-text: "Maybe next time."
