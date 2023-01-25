@@ -13,9 +13,9 @@ import reactor.core.publisher.Mono;
 @Service
 @RequiredArgsConstructor
 public class CardService {
-    private final CardRepository cardRepository;
-    private final CardQueryService cardQueryService;
-    private final CardMapper cardMapper;
+        private final CardRepository cardRepository;
+        private final CardQueryService cardQueryService;
+        private final CardMapper cardMapper;
 
     public Mono<PageResponse> findAllCards(final long page, final long limit) {
         return cardRepository.count()
