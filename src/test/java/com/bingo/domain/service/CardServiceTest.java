@@ -112,6 +112,17 @@ class CardServiceTest {
 
     @Test
     void findCardByPlayerId() {
+        var playerId = ObjectId.get().toString();
+        var cardDocument = CardDocument.builder().playerId(playerId).build();
+        var cardResponse = CardResponse.builder().playerId(playerId).build();
+
+        when(cardQueryService.findCardByPlayerId(playerId)).thenReturn(Flux.just(cardDocument));
+
+        StepVerifier.create(cardService.findCardByPlayerId(playerId))
+                .assertNext(card -> {
+                    assertThat(card).isEqualTo(cardResponse);
+                })
+                .verifyComplete();
     }
 
     @Test
