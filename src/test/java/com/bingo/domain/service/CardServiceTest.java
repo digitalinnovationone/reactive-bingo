@@ -127,5 +127,16 @@ class CardServiceTest {
 
     @Test
     void findCardByRoundId() {
+        var roundId = ObjectId.get().toString();
+        var cardDocument = CardDocument.builder().roundId(roundId).build();
+        var cardResponse = CardResponse.builder().roundId(roundId).build();
+
+        when(cardQueryService.findCardByRoundId(roundId)).thenReturn(Flux.just(cardDocument));
+
+        StepVerifier.create(cardService.findCardByRoundId(roundId))
+                .assertNext(card -> {
+                    assertThat(card).isEqualTo(cardResponse);
+                })
+                .verifyComplete();
     }
 }
