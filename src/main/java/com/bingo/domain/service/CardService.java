@@ -37,8 +37,8 @@ public class CardService {
                 .map(cardMapper::toCardResponse);
     }
 
-    public Flux<CardResponse> findCardByPlayerId(final String userId) {
-        return cardQueryService.findCardByPlayerId(userId)
+    public Flux<CardResponse> findCardByPlayerId(final String playerId) {
+        return cardQueryService.findCardByPlayerId(playerId)
                 .map(cardMapper::toCardResponse);
     }
 
