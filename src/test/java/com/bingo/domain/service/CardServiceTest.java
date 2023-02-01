@@ -97,6 +97,17 @@ class CardServiceTest {
 
     @Test
     void findCardByCardId() {
+        var cardId = ObjectId.get().toString();
+        var cardDocument = CardDocument.builder().id(cardId).build();
+        var cardResponse = CardResponse.builder().id(cardId).build();
+
+        when(cardQueryService.findCardByCardId(cardId)).thenReturn(Mono.just(cardDocument));
+
+        StepVerifier.create(cardService.findCardByCardId(cardId))
+                .assertNext(card -> {
+                    assertThat(card).isEqualTo(cardResponse);
+                })
+                .verifyComplete();
     }
 
     @Test
